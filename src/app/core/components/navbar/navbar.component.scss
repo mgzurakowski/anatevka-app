@@ -1,0 +1,25 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    max-width: 640px;
+    height: 60px;
+    transform: translateX(-50%);
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    backdrop-filter: blur(3px);
+}
+
+.navbar-link {
+    background: none;
+    border: none;
+}
+
+.navbar-link-icon {
+    color: #fff;
+    font-size: 1.5rem;
+}
