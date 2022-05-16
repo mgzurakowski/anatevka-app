@@ -1,0 +1,24 @@
+@import './colors.scss';
+
+$primaryFont: "Open Sans", sans-serif;
+$baseFontSize: 16px;
+
+$textSizings:(
+  xxl: 2.5rem,
+  xl: 2rem,
+  l: 1.75rem,
+  m: 1.5rem,
+  s: 1.25rem,
+  xs: 1rem,
+);
+
+h1, h2, h3, h4, h5, h6,
+p {
+    color: $textColor;
+}
+
+@each $key, $val in $textSizings {
+    .text-#{$key} {
+        font-size: #{$val};
+    }
+}
