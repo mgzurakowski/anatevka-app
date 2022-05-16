@@ -1,0 +1,16 @@
+.app {
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(#39639b, #5a8cc1);
+    min-height: 100vh;
+  }
+  
+  .page {
+    border-radius: 3px;
+    width: 100%;
+    max-width: 640px;
+    min-height: 100%;
+    padding: 60px 15px 15px 15px;
+    position: relative;
+  }
+  
