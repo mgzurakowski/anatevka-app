@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DaysListComponent } from 'src/app/features/days/days-list/days-list.component';
 import { TodayComponent } from 'src/app/features/days/today/today.component';
 
 const routes: Routes = [
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'today',
     component: TodayComponent,
+  },
+  {
+    path: 'list',
+    component: DaysListComponent,
   },
 ];
 
