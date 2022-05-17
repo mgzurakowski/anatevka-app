@@ -1,5 +1,11 @@
 <div class="today-info">
-    <app-today-header [cityName]="'Lorem Ipsum'"></app-today-header>
+    <div class="today-header-tile">
+        <app-today-header *ngIf="(cityName$ | async) as cityName; else loader" [cityName]="cityName"></app-today-header>
+    </div>
     <app-today-tile [icon]="iconSun" [text]="'7:00'" class="today-info-sunrise"></app-today-tile>
     <app-today-tile [icon]="iconMoon" [text]="'21:37'" class="today-info-sunset"></app-today-tile>
 </div>
+
+<ng-template #loader>
+    <app-spinner></app-spinner>
+</ng-template>

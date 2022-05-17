@@ -22,8 +22,10 @@
     }
 }
 
-app-today-header {
+.today-header-tile {
     grid-area: header;
+    align-self: center;
+    justify-self: center;
 }
 
 .today-info-sunrise,
