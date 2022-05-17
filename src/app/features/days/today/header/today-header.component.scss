@@ -1,0 +1,22 @@
+.today-header {
+    padding: 15px;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+
+    &__text {
+        font-weight: 300;
+        text-align: center;
+        width: 100%;
+        text-shadow: 3px 3px 3px rgb(0 0 0 / 25%);
+        margin: 0px;
+    }
+
+    &__subtext {
+        text-align: center;
+        width: 100%;
+        margin: 10px 0px 0px 0px;
+        font-variant: small-caps;
+    }
+}

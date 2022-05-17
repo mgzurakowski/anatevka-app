@@ -1,0 +1,23 @@
+.today-tile {
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+    padding: 15px;
+    height: auto;
+
+    &__icon {
+        margin-bottom: 10px;
+        color: #fff;
+        width: 100%;
+        text-align: center;
+    }
+    &__text {
+        text-shadow: 3px 3px 3px rgb(0 0 0 / 25%);
+        color: #fff;
+    }
+  }
+  
