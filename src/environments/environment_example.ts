@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  openWeatherMapApiKey: 'ade96f18697229616a092d87bae92c16',
+  /* todo: write your OpenWeather api key here */
+  openWeatherMapApiKey: '',
 };
 
 /*
