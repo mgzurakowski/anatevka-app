@@ -40,3 +40,9 @@
 .today-info-sunset {
     grid-area: sunset;
 }
+
+.sunsrise-sunset-loader {
+    grid-area: sunrise / sunrise / sunrise / sunset;
+    align-self: center;
+    justify-self: center;
+}

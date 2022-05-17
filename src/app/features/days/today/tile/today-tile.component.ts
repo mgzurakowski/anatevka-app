@@ -9,8 +9,8 @@ import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 })
 export class TodayTileComponent implements OnInit {
 
-  @Input() icon!: IconDefinition;
-  @Input() text!: string;
+  @Input() icon?: IconDefinition;
+  @Input() text?: string | null;
 
   constructor() { }
 
