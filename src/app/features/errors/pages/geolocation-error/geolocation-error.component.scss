@@ -1,0 +1,31 @@
+.error {
+    padding-top: 60px;
+
+    &__header {
+        font-size: 1.4rem;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 30px;
+        font-weight: 600;
+    }
+
+    &__description {
+        font-size: 1rem;
+        color: #fff;
+        text-align: center;
+        font-weight: 300;
+        line-height: 1.5;
+    }
+
+    &__actions {
+        display: flex;
+        text-align: center;
+        margin-top: 30px;
+        justify-content: center;
+    }
+    
+    &__button {
+        color: #fff;
+        text-align: center;
+    }
+}
