@@ -1,0 +1,15 @@
+<div class="error">
+    <h2 class="text-m error__header">Geolocation error</h2>
+    <p class="text-xs error__description">
+      Oh, no! Something went wrong when we tried to get your location. Please make
+      sure you enabled geolocation and set permissions. And then you can click
+      that fancy button below to refresh the app.
+    </p>
+  
+    <div class="error__actions">
+      <a class="error__button" routerLink="/">
+        <fa-icon [icon]="iconRefresh" class="text-xxl"></fa-icon>
+      </a>
+    </div>
+  </div>
+  

@@ -10,6 +10,11 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'error',
+    loadChildren: () =>
+      import('./features/errors/errors.module').then((m) => m.ErrorsModule),
+  },
+  {
     path: '',
     redirectTo: '/days/today',
     pathMatch: 'full',
@@ -18,7 +23,7 @@ const routes: Routes = [
     path: '**',
     redirectTo: '/days/today',
     pathMatch: 'full',
-  },
+  }
 ];
 
 @NgModule({
