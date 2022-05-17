@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TileComponent } from './tile.component';
 
-import { TodayTileComponent } from './today-tile.component';
-
-describe('TodayTileComponent', () => {
-  let component: TodayTileComponent;
-  let fixture: ComponentFixture<TodayTileComponent>;
+describe('TileComponent', () => {
+  let component: TileComponent;
+  let fixture: ComponentFixture<TileComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TodayTileComponent ]
+      declarations: [ TileComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TodayTileComponent);
+    fixture = TestBed.createComponent(TileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

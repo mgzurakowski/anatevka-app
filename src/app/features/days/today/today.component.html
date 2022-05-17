@@ -3,8 +3,8 @@
         <app-today-header *ngIf="(cityName$ | async) as cityName; else loader" [cityName]="cityName"></app-today-header>
     </div>
     <ng-container *ngIf="(sunriseSunsetInfo$ | async) as sunriseSunsetInfo; else sunriseSunsetLoader">
-        <app-today-tile [icon]="iconSun" [text]="sunriseSunsetInfo.sunrise | date: sunriseSunsetHourFormat" class="today-info-sunrise"></app-today-tile>
-        <app-today-tile [icon]="iconMoon" [text]="sunriseSunsetInfo.sunset | date: sunriseSunsetHourFormat" class="today-info-sunset"></app-today-tile>
+        <app-tile [icon]="iconSun" [text]="sunriseSunsetInfo.sunrise | date: sunriseSunsetHourFormat" class="today-info-sunrise"></app-tile>
+        <app-tile [icon]="iconMoon" [text]="sunriseSunsetInfo.sunset | date: sunriseSunsetHourFormat" class="today-info-sunset"></app-tile>
     </ng-container>
 </div>
 
