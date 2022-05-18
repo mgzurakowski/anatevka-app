@@ -20,12 +20,27 @@
             "sunset"
             "footer";
     }
-}
 
-.today-header-tile {
-    grid-area: header;
-    align-self: center;
-    justify-self: center;
+    &__header-tile {
+        grid-area: header;
+        align-self: center;
+        justify-self: center;
+    }
+
+    &__footer {
+        grid-area: footer;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-top: 15px;
+    }
+
+    &__link {
+        font-size: 1rem;
+        color: #fff;
+        font-weight: 400;
+        text-shadow: 3px 3px 3px rgb(0 0 0 / 25%);
+    }
 }
 
 .today-info-sunrise,

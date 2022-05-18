@@ -1,11 +1,14 @@
 <div class="today-info">
-    <div class="today-header-tile">
+    <div class="today-info__header-tile">
         <app-today-header *ngIf="(cityName$ | async) as cityName; else loader" [cityName]="cityName"></app-today-header>
     </div>
     <ng-container *ngIf="(sunriseSunsetInfo$ | async) as sunriseSunsetInfo; else sunriseSunsetLoader">
         <app-tile [icon]="iconSun" [text]="sunriseSunsetInfo.sunrise | date: sunriseSunsetHourFormat" class="today-info-sunrise"></app-tile>
         <app-tile [icon]="iconMoon" [text]="sunriseSunsetInfo.sunset | date: sunriseSunsetHourFormat" class="today-info-sunset"></app-tile>
     </ng-container>
+    <div class="today-info__footer">
+        <a routerLink="/days/list" class="today-info__link">show more &#10143;</a>
+    </div>
 </div>
 
 <ng-template #loader>
