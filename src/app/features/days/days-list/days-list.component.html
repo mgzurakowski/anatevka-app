@@ -1,11 +1,17 @@
 <div class="today-info">
     <div class="today-info__cards">
-        <app-days-list-day-card class="today-info__card" [title]="'lorem'" [sunriseText]="'7:00'" [sunsetText]="'21:37'"></app-days-list-day-card>
-        <app-days-list-day-card class="today-info__card" [title]="'lorem'" [sunriseText]="'7:00'" [sunsetText]="'21:37'"></app-days-list-day-card>
-        <app-days-list-day-card class="today-info__card" [title]="'lorem'" [sunriseText]="'7:00'" [sunsetText]="'21:37'"></app-days-list-day-card>
+        <ng-container *ngIf="(sunriseSunsetItems$ | async) as sunriseSunsetItems; else pageLoader">
+            <app-days-list-day-card *ngFor="let sunriseSunsetItem of sunriseSunsetItems" class="today-info__card"
+                [title]="(sunriseSunsetItem.sunrise | date) ?? ''"
+                [sunriseText]="(sunriseSunsetItem.sunrise | date: sunriseSunsetHourFormat) ?? ''"
+                [sunsetText]="(sunriseSunsetItem.sunset | date: sunriseSunsetHourFormat) ?? ''"
+            ></app-days-list-day-card>
+        </ng-container>
     </div>
 </div>
 
-<ng-template #loader>
-    <app-spinner></app-spinner>
+<ng-template #pageLoader>
+    <div class="page-loader">
+        <app-spinner></app-spinner>
+    </div>
 </ng-template>
