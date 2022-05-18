@@ -11,6 +11,7 @@ export class TileComponent implements OnInit {
 
   @Input() icon?: IconDefinition;
   @Input() text?: string | null;
+  @Input() isBorder?: boolean = true;
 
   constructor() { }
 

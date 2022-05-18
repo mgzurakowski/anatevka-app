@@ -1,4 +1,4 @@
-<div class="today-tile">
+<div class="today-tile" [class.today-tile--border]="isBorder">
     <fa-icon *ngIf="icon" [icon]="icon" class="text-m today-tile__icon"></fa-icon>
     <span *ngIf="text" class="text-xs today-tile__text">{{ text }}</span>
 </div>
