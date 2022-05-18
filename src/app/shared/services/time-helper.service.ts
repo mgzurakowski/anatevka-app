@@ -2,13 +2,11 @@ import { DatePipe } from '@angular/common';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TimeHelperService {
 
-  readonly sunriseSunsetDateFormat = 'yyyy-MM-dd';
-
-  constructor(private datePipe: DatePipe) { }
+  constructor() { }
 
   /**
    * @param date 
@@ -22,7 +20,13 @@ export class TimeHelperService {
   }
 
   formatDateForSunriseSunsetApi(date: Date) {
-    return this.datePipe.transform(date, this.sunriseSunsetDateFormat);
+    // get day number with zero padded (eg. 01 or 11)
+    const day = `${date.getDate()}`.padStart(2, '0');
+    // get month number with zero padded (eg. 01 or 11)
+    const month = `${date.getMonth() + 1}`.padStart(2, '0');
+    const year = '' + date.getFullYear();
+    
+    return `${year}-${month}-${day}`;
   }
   
 }
