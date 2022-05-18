@@ -33,7 +33,7 @@ export class TodayService {
           const lat = '' + location?.latitude;
           const lng = '' + location?.longitude;
 
-          return this.sunriseSunsetService.getSunriseSunsetData$(lat, lng);
+          return this.sunriseSunsetService.getSunriseSunsetData$(lat, lng, new Date());
         })
       );
     return sunriseSunsetInfo$;

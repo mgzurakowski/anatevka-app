@@ -2,12 +2,13 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable, tap } from 'rxjs';
 import { SunriseSunsetData, SunriseSunsetDataHttpResponse } from 'src/app/shared/models/sunrise-sunset.model';
+import { TimeHelperService } from 'src/app/shared/services/time-helper.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SunriseSunsetService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, private timeHelper: TimeHelperService) {}
 
   /**
    * @param lat latitude in decimal degrees
@@ -18,14 +19,14 @@ export class SunriseSunsetService {
   getSunriseSunsetData$(
     lat: string,
     lng: string,
-    date: 'today' | string = 'today',
+    date: Date,
     formatTime: boolean = false
   ): Observable<SunriseSunsetData> {
     const url = `https://api.sunrise-sunset.org/json`;
     const params = new HttpParams().appendAll({
       lat: lat,
       lng: lng,
-      date: date,
+      date: this.timeHelper.formatDateForSunriseSunsetApi(date),
       formatted: formatTime ? 1 : 0,
     });
     const options = {
