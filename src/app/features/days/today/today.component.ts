@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
-import { catchError, Observable, of } from 'rxjs';
+import { catchError, Observable, of, switchMap } from 'rxjs';
 import { TodayService } from 'src/app/features/days/today/services/today.service';
 import { SunriseSunsetData } from 'src/app/shared/models/sunrise-sunset.model';
+import { TimeHelperService } from 'src/app/shared/services/time-helper.service';
 
 @Component({
   selector: 'app-today',
@@ -23,25 +24,34 @@ export class TodayComponent implements OnInit {
 
   constructor(
     private todayService: TodayService,
-    private router: Router
+    private router: Router,
+    private timeHelper: TimeHelperService,
   ) { }
 
   ngOnInit(): void {
-    this.cityName$ = this.todayService.getCityName$().pipe(
-      catchError((error) => {
-        this.router.navigate(['/error', 'geolocation']);
-        return of(error);
-      })
+    this.cityName$ = this.timeHelper.refreshEachQuarterOfHour$().pipe(
+      switchMap((_) =>
+        this.todayService.getCityName$().pipe(
+          catchError((error) => {
+            this.router.navigate(['/error', 'geolocation']);
+            return of(error);
+          })
+        )
+      )
     );
 
-    this.sunriseSunsetInfo$ = this.todayService
-    .getTodaySunriseSunsetInfo$()
-    .pipe(
-      catchError((error) => {
-        this.router.navigate(['/error', 'geolocation']);
-        return of(error);
-      })
+    this.sunriseSunsetInfo$ = this.timeHelper.refreshEachQuarterOfHour$().pipe(
+      switchMap((_) => this.todayService
+        .getTodaySunriseSunsetInfo$()
+        .pipe(
+          catchError((error) => {
+            this.router.navigate(['/error', 'geolocation']);
+            return of(error);
+          })
+        ))
     );
+
+    this.timeHelper.refreshEachQuarterOfHour$();
   }
 
 }
