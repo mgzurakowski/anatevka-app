@@ -44,7 +44,6 @@ export class TimeHelperService {
     return timer(timeToRefresh, 15 * 60 * 1000)
       .pipe(
         startWith(null), // initial request
-        tap((data) => console.log('asdasd'))
       );
   }
 
@@ -55,9 +54,6 @@ export class TimeHelperService {
     const currentTime = new Date();
     const minutesToNextQuarter = 15 - (currentTime.getMinutes() % 15);
     const secondsToNextQuarter = 60 - currentTime.getSeconds();
-
-    console.log(minutesToNextQuarter, secondsToNextQuarter);
-    
     
     return (minutesToNextQuarter * 60 * 1000) + (secondsToNextQuarter * 1000) - (60 * 1000);
   }
