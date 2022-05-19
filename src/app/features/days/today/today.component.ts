@@ -43,12 +43,7 @@ export class TodayComponent implements OnInit {
     this.sunriseSunsetInfo$ = this.timeHelper.refreshEachQuarterOfHour$().pipe(
       switchMap((_) => this.todayService
         .getTodaySunriseSunsetInfo$()
-        .pipe(
-          catchError((error) => {
-            this.router.navigate(['/error', 'geolocation']);
-            return of(error);
-          })
-        ))
+      )
     );
 
     this.timeHelper.refreshEachQuarterOfHour$();
