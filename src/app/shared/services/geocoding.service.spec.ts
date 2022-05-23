@@ -1,13 +1,15 @@
+import { HttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 
 import { GeocodingService } from './geocoding.service';
 
 describe('GeocodingService', () => {
   let service: GeocodingService;
+  let httpClientSpy: jasmine.SpyObj<HttpClient>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(GeocodingService);
+    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
+    service = new GeocodingService(httpClientSpy);
   });
 
   it('should be created', () => {

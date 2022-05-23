@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DaysListService } from 'src/app/features/days/days-list/services/days-list.service';
 
 import { DaysListComponent } from './days-list.component';
 
@@ -8,7 +9,8 @@ describe('DaysListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DaysListComponent ]
+      declarations: [ DaysListComponent ],
+      providers: [DaysListService]
     })
     .compileComponents();
   });

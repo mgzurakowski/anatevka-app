@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { flatMap, forkJoin, map, Observable, of, switchMap, toArray, zip } from 'rxjs';
-import { SunriseSunsetData } from 'src/app/shared/models/sunrise-sunset.model';
-import { GeocodingService } from 'src/app/shared/services/geocoding.service';
+import { switchMap, zip } from 'rxjs';
 import { GeolocationService } from 'src/app/shared/services/geolocation.service';
 import { SunriseSunsetService } from 'src/app/shared/services/sunrise-sunset.service';
 import { TimeHelperService } from 'src/app/shared/services/time-helper.service';
